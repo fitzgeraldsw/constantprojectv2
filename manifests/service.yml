@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "scfitzgek8scluster-8d14"
+    labels:
+        app: "scfitzgek8scluster-8d14"
+spec:
+    type: LoadBalancer
+    ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+      name: http
+    selector:
+        app: "scfitzgek8scluster-8d14"
