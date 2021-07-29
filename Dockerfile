@@ -4,6 +4,8 @@ FROM ubuntu
 
 # LABEL key="value"
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 # install Golang
 RUN apt update
 RUN apt upgrade
