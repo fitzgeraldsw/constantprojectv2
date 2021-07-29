@@ -7,7 +7,7 @@ FROM ubuntu
 # install Golang
 RUN apt update
 RUN apt upgrade
-RUN apt install golang-go
+RUN apt install -y golang-go
 RUN mkdir -p ~/go/src
 
 
