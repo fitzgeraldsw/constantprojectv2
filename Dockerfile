@@ -10,17 +10,17 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update
 RUN apt upgrade
 RUN apt install -y golang-go
-RUN mkdir -p ~/go/src
+RUN mkdir -p /home/user/go/src
 
 
 # copy app code to correct location in container
-COPY . ~/go/src
+COPY . /home/user/go/src
 
 # set working directory
-WORKDIR ~/go/src
+WORKDIR /home/user/go/src
 
 # install dependencies
 RUN go get
 
-# command for container to execute
-ENTRYPOINT [ "go", "main.go" ]
+# entry point for code
+ENTRYPOINT ["go","run","main.go"]
