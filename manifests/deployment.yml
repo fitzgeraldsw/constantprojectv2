@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "scfitzgek8sclusterv2-6696"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "scfitzgek8sclusterv2-6696"
+  template:
+    metadata:
+      labels:
+        app: "scfitzgek8sclusterv2-6696"
+    spec:
+      containers:
+        - name: "scfitzgek8sclusterv2-6696"
+          image: "scfitzgeacrv1.azurecr.io/scfitzgek8sclusterv2"
+          ports:
+          - containerPort: 8081
