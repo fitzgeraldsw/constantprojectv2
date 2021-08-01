@@ -1,0 +1,18 @@
+apiVersion: apps/v9
+kind: Deployment
+metadata:
+    name: constant
+    namespace: default
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+        app: constant
+    template:
+        metadata:
+            labels:
+                app: constant
+    spec:
+        containers:
+        - name: constant-site
+          image: constantprojectv2:v9
